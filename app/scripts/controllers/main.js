@@ -22,6 +22,12 @@ define(['angular', 'lodash', 'underscore.string'], function (angular, _, s) {
             return Math.round(val) === val ? val : s.sprintf('%.4f', val);
           };
 
+      $scope.resetInputs = function () {
+        $scope.a =
+        $scope.b =
+        $scope.c = '';
+      };
+
       $scope.inputsFilled = function () {
         return isInput($scope.a) && isInput($scope.b) && isInput($scope.c);
       };
