@@ -1,9 +1,9 @@
 /*jshint unused: vars */
 define([
-  'angular', 
-'controllers/main', 
-'controllers/about', 
-'directives/calcreal', 
+  'angular',
+'controllers/main',
+'controllers/about',
+'directives/calcreal',
 'directives/calcmathjax',
 'angular-route',
 'angular-sanitize'
@@ -32,6 +32,10 @@ define([
         .when('/', {
           templateUrl: 'views/main.html',
           controller: 'MainCtrl'
+        })
+        .when('/about', {
+          templateUrl: 'views/about.html',
+          controller: 'AboutCtrl'
         })
         .otherwise({
           redirectTo: '/'

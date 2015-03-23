@@ -21,13 +21,13 @@
           </div>
         </div>
       </form>
-      <div class="well" style="margin-top: 20px;" ng-show="inputsValid()">
+      <div class="well" style="margin-top: 20px;" ng-show="inputsFilled() && inputsValid()">
         <p style="text-align: center;">
           <span calc-mathjax="expression()"></span>
         </p>
         <p ng-bind-html="result()" class="lead"></p>
       </div>
-    </div>    
+    </div>
   </div>
 </div>
 

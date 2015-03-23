@@ -10,16 +10,18 @@ define(['angular', 'lodash'], function (angular, _) {
    */
   angular.module('angularCalculatorApp.controllers.MainCtrl', [])
     .controller('MainCtrl', function ($scope) {
-      $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-      ];
-
       var num = function (val) { return 1 * val; },
           isNum = function (val) {
             return !_.isUndefined(num(val)) && !_.isNaN(num(val)) && _.isNumber(num(val));
+          },
+          isInput = function (val) {
+            return (typeof val !== 'undefined' && val !== null && val !== '') ||
+              val === 0;
           };
+
+      $scope.inputsFilled = function () {
+        return isInput($scope.a) && isInput($scope.b) && isInput($scope.c);
+      };
 
       $scope.inputsValid = function () {
         return isNum($scope.a) && isNum($scope.b) && isNum($scope.c);
@@ -32,7 +34,7 @@ define(['angular', 'lodash'], function (angular, _) {
 
         return '\\begin{array}{*{20}c} {x = \\frac{{ - (' + $scope.b +
           ') \\pm \\sqrt {(' + $scope.b + ')^2 - 4 * ' + $scope.a + ' * ' + $scope.c +
-          '} }}{{2' + $scope.a + '}}} & {{\\rm{when}}} & {' + $scope.a +
+          '} }}{{2 * ' + $scope.a + '}}} & {{\\rm{when}}} & {' + $scope.a +
           'x^2 + ' + $scope.b + 'x + ' + $scope.c + ' = 0} \\\\ \\end{array}';
       };
 
