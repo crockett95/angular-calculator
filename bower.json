@@ -13,11 +13,14 @@
     "MathJax": "~2.5.1",
     "lodash": "~3.5.0",
     "bootstrap-sass-official": "~3.3.4",
-    "fontawesome": "~4.3.0"
+    "fontawesome": "~4.3.0",
+    "underscore.string": "~3.0.3"
   },
   "overrides": {
     "fontawesome": {
-      "main": ["./scss/font-awesome.scss"]
+      "main": [
+        "./scss/font-awesome.scss"
+      ]
     }
   },
   "devDependencies": {

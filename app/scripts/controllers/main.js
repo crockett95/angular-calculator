@@ -1,4 +1,4 @@
-define(['angular', 'lodash'], function (angular, _) {
+define(['angular', 'lodash', 'underscore.string'], function (angular, _, s) {
   'use strict';
 
   /**
@@ -61,8 +61,8 @@ define(['angular', 'lodash'], function (angular, _) {
           solutionA = (-b + Math.sqrt(discriminant)) / (2 * a);
           solutionB = (-b - Math.sqrt(discriminant)) / (2 * a);
           return 'There are solutions at ' +
-            '<strong>' + solutionA + '</strong> and ' +
-            '<strong>' + solutionB + '</strong>';
+            '<strong>' + s.sprintf('%.4f', solutionA) + '</strong> and ' +
+            '<strong>' + s.sprintf('%.4f', solutionB) + '</strong>';
         }
       };
     });

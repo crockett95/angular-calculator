@@ -11,7 +11,8 @@ require.config({
     'angular-mocks': '../bower_components/angular-mocks/angular-mocks',
     'jquery': '../bower_components/jquery/dist/jquery',
     'lodash': '../bower_components/lodash/lodash',
-    'MathJax': '../bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+    'MathJax': '../bower_components/MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'underscore.string' : '../bower_components/underscore.string/dist/underscore.string'
   },
   shim: {
     'angular' : {
