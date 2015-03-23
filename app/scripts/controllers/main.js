@@ -36,9 +36,9 @@ define(['angular', 'lodash', 'underscore.string'], function (angular, _, s) {
         }
 
         return '\\begin{array}{*{20}c} {x = \\frac{{ - (' + $scope.b +
-          ') \\pm \\sqrt {(' + $scope.b + ')^2 - 4 * ' + $scope.a + ' * ' + $scope.c +
-          '} }}{{2 * ' + $scope.a + '}}} & {{\\rm{when}}} & {' + $scope.a +
-          'x^2 + ' + $scope.b + 'x + ' + $scope.c + ' = 0} \\\\ \\end{array}';
+          ') \\pm \\sqrt {(' + $scope.b + ')^2 - 4 * (' + $scope.a + ') * (' + $scope.c +
+          ')} }}{{2 * (' + $scope.a + ')}}} & {{\\rm{when}}} & {(' + $scope.a +
+          ')x^2 + (' + $scope.b + ')x + (' + $scope.c + ') = 0} \\\\ \\end{array}';
       };
 
       $scope.result = function () {
