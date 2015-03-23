@@ -17,6 +17,9 @@ define(['angular', 'lodash', 'underscore.string'], function (angular, _, s) {
           isInput = function (val) {
             return (typeof val !== 'undefined' && val !== null && val !== '') ||
               val === 0;
+          },
+          formatNum = function (val) {
+            return Math.round(val) === val ? val : s.sprintf('%.4f', val);
           };
 
       $scope.inputsFilled = function () {
@@ -56,13 +59,14 @@ define(['angular', 'lodash', 'underscore.string'], function (angular, _, s) {
         } else if (0 === discriminant) {
           solutionA = -b / (2 * a);
 
-          return 'There is a single solution at <strong>' + solutionA + '</strong>';
+          return 'There is a single solution at <strong>' + formatNum(solutionA) +
+            '</strong>';
         } else {
           solutionA = (-b + Math.sqrt(discriminant)) / (2 * a);
           solutionB = (-b - Math.sqrt(discriminant)) / (2 * a);
           return 'There are solutions at ' +
-            '<strong>' + s.sprintf('%.4f', solutionA) + '</strong> and ' +
-            '<strong>' + s.sprintf('%.4f', solutionB) + '</strong>';
+            '<strong>' + formatNum(solutionA) + '</strong> and ' +
+            '<strong>' + formatNum(solutionB) + '</strong>';
         }
       };
     });
